@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const storyItems = [
   {
-    year: "2021",
+    year: "2022",
     title: "Lần đầu gặp gỡ",
     desc: "Chúng tôi gặp nhau trong một ngày rất bình thường, nhưng lại mở ra một câu chuyện không hề bình thường.",
   },
