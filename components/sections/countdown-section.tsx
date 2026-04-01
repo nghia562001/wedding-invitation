@@ -54,7 +54,7 @@ export function CountdownSection() {
   ];
 
   return (
-    <section className="px-6 py-16 md:px-10 md:py-24">
+    <section className="px-4 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-6xl space-y-10">
         {/* Header */}
         <div className="space-y-3 text-center">
@@ -70,17 +70,14 @@ export function CountdownSection() {
         </div>
 
         {/* Countdown cards */}
-        <div className="flex justify-center gap-4 flex-wrap md:flex-nowrap">
+        <div className="grid grid-cols-4 gap-2 sm:gap-3 md:gap-4">
           {items.map((item) => (
-            <Card
-              key={item.label}
-              className="flex-1 min-w-[70px] md:min-w-0 max-w-[150px]"
-            >
-              <CardContent className="space-y-2 p-4 md:p-6 text-center">
-                <p className="text-4xl font-semibold md:text-5xl">
+            <Card key={item.label} className="w-full">
+              <CardContent className="p-3 sm:p-4 md:p-6 text-center">
+                <p className="text-2xl font-semibold sm:text-3xl md:text-5xl">
                   {String(item.value).padStart(2, "0")}
                 </p>
-                <p className="text-sm uppercase tracking-[0.2em] text-neutral-500">
+                <p className="mt-1 text-[10px] uppercase tracking-[0.15em] text-neutral-500 sm:text-xs md:text-sm md:tracking-[0.2em]">
                   {item.label}
                 </p>
               </CardContent>

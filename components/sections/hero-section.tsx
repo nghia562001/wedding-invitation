@@ -18,10 +18,10 @@ export function HeroSection() {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      audioRef.current.volume = 1; // đảm bảo âm lượng
-      audioRef.current.play().catch(() => {
-        console.log("Nhấn Play để phát nhạc.");
-      });
+      audioRef.current.volume = 1;
+      audioRef.current
+        .play()
+        .catch(() => console.log("Nhấn Play để phát nhạc."));
       setIsPlaying(true);
     }
   };
@@ -38,7 +38,7 @@ export function HeroSection() {
 
             <div className="space-y-4">
               <h1 className="text-4xl font-semibold leading-tight md:text-6xl">
-                Trung Nghĩa <span className="text-neutral-400">& </span> Tường Vy
+                Tường Vy <span className="text-neutral-400">& </span> Trung Nghĩa
               </h1>
               <p className="text-lg text-neutral-600 md:text-xl">
                 Trân trọng kính mời bạn đến chung vui trong ngày trọng đại của chúng tôi.
@@ -56,10 +56,7 @@ export function HeroSection() {
               <Button onClick={() => scrollToSection("event")}>
                 Xem thông tin lễ cưới
               </Button>
-              <Button
-                variant="outline"
-                onClick={() => scrollToSection("rsvp")}
-              >
+              <Button variant="outline" onClick={() => scrollToSection("rsvp")}>
                 Xác nhận tham dự
               </Button>
             </div>
@@ -75,45 +72,41 @@ export function HeroSection() {
               />
             </div>
 
-            {/* Info box with music button */}
-            <div className="absolute -bottom-6 -left-4 flex justify-between items-center rounded-3xl border border-white/70 bg-white/90 px-5 py-4 shadow-lg backdrop-blur min-w-[280px] md:min-w-[300px] gap-4">
-              {/* Text */}
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
-                  Forever starts here
-                </p>
-                <p className="mt-1 text-sm font-medium text-neutral-800">
-                  Một ngày đặc biệt, một hành trình trọn đời
-                </p>
-              </div>
+{/* Info box with music button */}
+<div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex justify-between items-center rounded-3xl border border-white/70 bg-white/90 px-6 py-4 shadow-lg backdrop-blur w-[calc(100%+2rem)] md:w-[calc(100%+2rem)] max-w-[calc(100%+2rem)] gap-4">
+  {/* Text bên trái */}
+  <div className="flex-1">
+    <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
+      Forever starts here
+    </p>
+    <p className="mt-1 text-sm font-medium text-neutral-800">
+      Cùng nhau viết tiếp chuyện trăm năm
+    </p>
+  </div>
 
-              {/* Music button */}
-              <button
-                onClick={toggleMusic}
-                className="w-12 h-12 ml-4 rounded-full border border-white/70 bg-white/90 shadow-lg flex items-center justify-center hover:bg-neutral-100 transition"
-                aria-label="Toggle music"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-neutral-800"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  {isPlaying ? (
-                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                  ) : (
-                    <path d="M8 5v14l11-7L8 5z" />
-                  )}
-                </svg>
-              </button>
-            </div>
+  {/* Nút nhạc bên phải */}
+  <button
+    onClick={toggleMusic}
+    className="w-12 h-12 flex-shrink-0 rounded-full border border-white/70 bg-white/90 shadow-lg flex items-center justify-center hover:bg-neutral-100 transition"
+    aria-label="Toggle music"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6 text-neutral-800"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      {isPlaying ? (
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+      ) : (
+        <path d="M8 5v14l11-7L8 5z" />
+      )}
+    </svg>
+  </button>
+</div>
 
             {/* Hidden audio element */}
-            <audio
-              ref={audioRef}
-              src="/audio/wedding-song.mp3"
-              loop
-            />
+            <audio ref={audioRef} src="/audio/wedding-song.mp3" loop />
           </div>
         </div>
       </div>
