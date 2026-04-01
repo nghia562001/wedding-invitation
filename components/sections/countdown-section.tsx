@@ -203,7 +203,7 @@ export function CountdownSection() {
             Countdown
           </p>
 
-          <h2 className="text-3xl font-semibold tracking-[-0.02em] md:text-5xl">
+          <h2 className="text-[1.9rem] font-semibold leading-tight tracking-[-0.02em] sm:text-[2.2rem] md:text-5xl">
             Đếm ngược đến ngày cưới
           </h2>
 
