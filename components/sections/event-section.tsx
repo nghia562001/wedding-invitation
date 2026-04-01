@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
@@ -31,7 +32,7 @@ export function EventSection() {
                   09:00 AM
                 </h3>
                 <p className="mt-2 text-neutral-600">
-                  Chủ Nhật, 26 tháng 04 năm 2026
+                  Thứ Bảy, 25 tháng 04 năm 2026
                 </p>
               </div>
 
@@ -54,7 +55,7 @@ export function EventSection() {
           {/* Right image */}
           <div className="h-full overflow-hidden rounded-[2rem]">
             <img
-              src="/images/DSC05662.jpg"
+              src="/images/DSC05994.jpg"
               alt="Wedding venue"
               className="h-full min-h-[360px] w-full object-cover"
             />
