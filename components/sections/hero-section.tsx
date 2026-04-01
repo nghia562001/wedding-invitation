@@ -69,7 +69,7 @@ export function HeroSection() {
           <div className="relative">
             <div className="aspect-4/5 overflow-hidden rounded-4xl border-neutral-200 bg-white shadow-xl">
               <img
-                src="/images/DSC05994.jpg"
+                src="/images/DSC05656.jpg"
                 alt="Wedding couple"
                 className="h-full w-full object-cover"
               />
