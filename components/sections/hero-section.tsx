@@ -49,7 +49,7 @@ export function HeroSection() {
               <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
                 Save the Date
               </p>
-              <p className="text-2xl font-medium md:text-3xl">24.04.2026</p>
+              <p className="text-2xl font-medium md:text-3xl">26.04.2026</p>
             </div>
 
             <div className="flex flex-wrap gap-3">
@@ -69,7 +69,7 @@ export function HeroSection() {
           <div className="relative">
             <div className="aspect-4/5 overflow-hidden rounded-4xl border-neutral-200 bg-white shadow-xl">
               <img
-                src="/images/DSC05994 13x18.jpg"
+                src="/images/DSC05994.jpg"
                 alt="Wedding couple"
                 className="h-full w-full object-cover"
               />

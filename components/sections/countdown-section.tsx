@@ -36,7 +36,7 @@ export function CountdownSection() {
   });
 
   useEffect(() => {
-    // set ngay lần đầu sau khi mount
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTimeLeft(getTimeLeft(TARGET_DATE));
 
     const interval = setInterval(() => {
@@ -56,6 +56,7 @@ export function CountdownSection() {
   return (
     <section className="px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-6xl space-y-10">
+        {/* Header */}
         <div className="space-y-3 text-center">
           <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
             Countdown
@@ -68,10 +69,14 @@ export function CountdownSection() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        {/* Countdown cards */}
+        <div className="flex justify-center gap-4 flex-wrap md:flex-nowrap">
           {items.map((item) => (
-            <Card key={item.label}>
-              <CardContent className="space-y-2 p-8 text-center">
+            <Card
+              key={item.label}
+              className="flex-1 min-w-[70px] md:min-w-0 max-w-[150px]"
+            >
+              <CardContent className="space-y-2 p-4 md:p-6 text-center">
                 <p className="text-4xl font-semibold md:text-5xl">
                   {String(item.value).padStart(2, "0")}
                 </p>

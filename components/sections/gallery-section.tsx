@@ -1,8 +1,8 @@
 const galleryImages = [
-  "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1525258946800-98cfd641d0de?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1507504031003-b417219a0fde?q=80&w=1200&auto=format&fit=crop",
+  "/images/DSC05742.jpg",
+  "/images/DSC05629.jpg",
+  "/images/DSC05659.jpg",
+  "/images/DSC05749.jpg",
 ];
 
 export function GallerySection() {

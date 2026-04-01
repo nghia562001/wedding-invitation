@@ -14,7 +14,7 @@ export default function HomePage() {
       <GallerySection />
       <EventSection />
       <CountdownSection />
-      {/* <RsvpSection /> */}
+      <RsvpSection />
       <FooterSection />
     </main>
   );

@@ -25,7 +25,7 @@ export function EventSection() {
             <CardContent className="flex h-full flex-col justify-between space-y-5 p-8 md:p-10">
               <div>
                 <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">
-                  Lễ thành hôn
+                  Lễ Vu Quy
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
                   09:00 AM
@@ -42,10 +42,10 @@ export function EventSection() {
                   Địa điểm
                 </p>
                 <h4 className="mt-2 text-lg font-medium md:text-xl">
-                  White Palace Convention
+                  Tư Gia Nhà Gái
                 </h4>
                 <p className="mt-2 text-sm leading-7 text-neutral-600 md:text-base">
-                  194 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, TP. Hồ Chí Minh
+                  Ấp Bờ Cảng, xã Long Điền, tỉnh Cà Mau
                 </p>
               </div>
             </CardContent>
@@ -54,7 +54,7 @@ export function EventSection() {
           {/* Right image */}
           <div className="h-full overflow-hidden rounded-[2rem]">
             <img
-              src="/images/DSC05662 13x18.jpg"
+              src="/images/DSC05662.jpg"
               alt="Wedding venue"
               className="h-full min-h-[360px] w-full object-cover"
             />
