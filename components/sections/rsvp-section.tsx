@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState } from "react";
@@ -33,7 +34,7 @@ export function RsvpSection() {
 
             <div className="overflow-hidden rounded-[2rem]">
               <img
-                src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop"
+                src="/images/DSC04785.jpg"
                 alt="RSVP"
                 className="h-full min-h-[320px] w-full object-cover"
               />
