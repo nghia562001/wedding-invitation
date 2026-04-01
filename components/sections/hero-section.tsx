@@ -142,7 +142,7 @@ export function HeroSection() {
               transition={{ duration: 1.1, delay: 0.3, ease: "easeOut" }}
             >
               <motion.img
-                src="/images/DSC05656.jpg"
+                src="/images/DSC05980.jpg"
                 alt="Wedding couple"
                 className="h-full w-full object-cover"
                 initial={{ scale: 1.06 }}
