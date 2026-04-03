@@ -569,7 +569,7 @@ export function RsvpSection() {
                       Confirmation
                     </p>
                     <h3 className="text-2xl font-semibold tracking-[-0.02em] md:text-3xl">
-                      Chia sẻ lời chúc cá nhân
+                      Gửi lời chúc cá nhân
                     </h3>
                     <p className="text-sm text-neutral-500">
                       Điền thông tin và gửi lời nhắn yêu thương đến cô dâu chú rể.
@@ -686,7 +686,7 @@ export function RsvpSection() {
                       Wishes
                     </p>
                     <h3 className="mt-1 break-words text-2xl font-semibold tracking-[-0.02em] md:text-3xl">
-                      Những lời chúc ngọt ngào
+                      Các lời chúc ngọt ngào
                     </h3>
                   </div>
 
