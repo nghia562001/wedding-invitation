@@ -142,7 +142,7 @@ export function EventSection() {
                   </p>
 
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
-                    09:00 AM
+                    16:30 PM
                   </h3>
 
                   <p className="mt-2 text-neutral-600">

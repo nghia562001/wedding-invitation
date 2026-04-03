@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 
-const TARGET_DATE = "2026-04-26T09:00:00";
+const TARGET_DATE = "2026-04-25T16:30:00";
 
 function getTimeLeft(targetDate: string) {
   const target = new Date(targetDate).getTime();
