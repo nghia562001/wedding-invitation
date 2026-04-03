@@ -569,7 +569,7 @@ export function RsvpSection() {
                       Confirmation
                     </p>
                     <h3 className="text-2xl font-semibold tracking-[-0.02em] md:text-3xl">
-                      Gửi lời chúc & xác nhận
+                      Chia sẻ lời chúc cá nhân
                     </h3>
                     <p className="text-sm text-neutral-500">
                       Điền thông tin và gửi lời nhắn yêu thương đến cô dâu chú rể.
@@ -602,14 +602,14 @@ export function RsvpSection() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <Textarea
-                      placeholder="Gửi lời chúc đến cô dâu chú rể... *"
-                      value={message}
-                      onChange={(e) => handleMessageChange(e.target.value)}
-                      maxLength={MESSAGE_MAX}
-                      className="min-h-[160px] rounded-2xl border-neutral-200 md:min-h-[220px]"
-                      disabled={submitLoading}
-                    />
+<Textarea
+  placeholder="Gửi lời chúc đến cô dâu chú rể... *"
+  value={message}
+  onChange={(e) => handleMessageChange(e.target.value)}
+  maxLength={MESSAGE_MAX}
+  className="min-h-[200px] resize-none rounded-2xl border-neutral-200 text-[15px] leading-6 md:min-h-[220px] md:text-base"
+  disabled={submitLoading}
+/>
 
                     <div className="flex items-center justify-between">
                       <p className="text-[11px] text-neutral-400">
@@ -632,7 +632,7 @@ export function RsvpSection() {
                     disabled={submitLoading}
                     className="h-12 w-full rounded-full text-sm font-medium"
                   >
-                    {submitLoading ? "Đang gửi..." : "Gửi lời chúc & xác nhận"}
+                    {submitLoading ? "Đang gửi..." : "Gửi lời chúc"}
                   </Button>
 
                   <AnimatePresence>
@@ -686,13 +686,13 @@ export function RsvpSection() {
                       Wishes
                     </p>
                     <h3 className="mt-1 break-words text-2xl font-semibold tracking-[-0.02em] md:text-3xl">
-                      Lời chúc từ mọi người
+                      Những lời chúc ngọt ngào
                     </h3>
                   </div>
 
-                  <p className="shrink-0 text-xs text-neutral-400 md:text-sm">
+                  {/* <p className="shrink-0 text-xs text-neutral-400 md:text-sm">
                     {totalWishes} lời chúc
-                  </p>
+                  </p> */}
                 </div>
 
                 <div

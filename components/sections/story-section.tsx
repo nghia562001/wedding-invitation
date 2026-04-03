@@ -217,11 +217,11 @@ export function StorySection() {
           className="max-w-2xl space-y-3"
         >
           <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
-            Our Story
+            Love Story
           </p>
 
           <h2 className="text-3xl font-semibold tracking-[-0.02em] md:text-5xl">
-            Câu chuyện của chúng tôi
+            Câu chuyện tình yêu
           </h2>
 
           <p className="text-neutral-600 md:text-lg">
