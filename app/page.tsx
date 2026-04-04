@@ -5,6 +5,7 @@ import { GallerySection } from "@/components/sections/gallery-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { RsvpSection } from "@/components/sections/rsvp-section";
 import { StorySection } from "@/components/sections/story-section";
+import { FloatingMusicControl } from "@/components/sections/FloatingMusicControl";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <CountdownSection />
       <RsvpSection />
       <FooterSection />
+      <FloatingMusicControl/>
     </main>
   );
 }
