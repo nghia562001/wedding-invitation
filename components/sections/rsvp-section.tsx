@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Image from "next/image";
 
 type Wish = {
   id: number;
@@ -152,15 +153,18 @@ function RsvpImage({
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/10 via-transparent to-white/10 opacity-80 transition-opacity duration-1000 group-hover:opacity-100" />
       <div className="pointer-events-none absolute inset-0 z-10 ring-1 ring-black/5 transition-all duration-1000 group-hover:ring-black/10" />
 
-      <img
+      <Image
         src={src}
         alt={alt}
-        loading={priority ? "eager" : "lazy"}
-        className={`h-full w-full object-cover ${objectPosition} transition-all duration-1000 ease-out will-change-transform group-hover:scale-[1.025] group-hover:brightness-[1.02]`}
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className={`object-cover ${objectPosition} transition-all duration-1000 ease-out will-change-transform group-hover:scale-[1.025] group-hover:brightness-[1.02]`}
+        priority={priority}
       />
     </motion.div>
   );
 }
+
 
 function WishCard({ wish }: { wish: Wish }) {
   return (

@@ -1,7 +1,6 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
-
+import Image from "next/image";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -21,6 +20,7 @@ type GalleryImageProps = {
   direction?: RevealDirection;
   priority?: boolean;
   hero?: boolean;
+  objectPosition?: string;
 };
 
 function getHiddenState(direction: RevealDirection, hero: boolean) {
@@ -75,10 +75,10 @@ function GalleryImage({
   direction = "up",
   priority = false,
   hero = false,
+  objectPosition = "object-center",
 }: GalleryImageProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const controls = useAnimation();
-
   const inView = useInView(ref, {
     amount: hero ? 0.12 : 0.14,
   });
@@ -120,12 +120,16 @@ function GalleryImage({
       {/* ring nhẹ */}
       <div className="pointer-events-none absolute inset-0 z-10 ring-1 ring-black/5 transition-all duration-1000 group-hover:ring-black/10" />
 
-      <img
-        src={src}
-        alt={alt}
-        loading={priority ? "eager" : "lazy"}
-        className="h-full w-full object-cover transition-all duration-1000 ease-out will-change-transform group-hover:scale-[1.02] group-hover:brightness-[1.02]"
-      />
+      <div className="relative h-full w-full">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          priority={priority}
+          className={`object-cover ${objectPosition} transition-all duration-1000 ease-out will-change-transform group-hover:scale-[1.02] group-hover:brightness-[1.02]`}
+        />
+      </div>
     </motion.div>
   );
 }
@@ -171,7 +175,6 @@ export function GallerySection() {
 
         {/* MOBILE LAYOUT */}
         <div className="space-y-4 md:hidden">
-          {/* Ảnh 1 - hero */}
           <GalleryImage
             src={galleryImages[0]}
             alt="Gallery 1"
@@ -181,7 +184,6 @@ export function GallerySection() {
             hero
           />
 
-          {/* Ảnh 2 + 3 - trượt từ 2 phía */}
           <div className="grid grid-cols-2 gap-4">
             <GalleryImage
               src={galleryImages[1]}
@@ -189,7 +191,6 @@ export function GallerySection() {
               className="aspect-[4/5] rounded-[1.5rem]"
               direction="left"
             />
-
             <GalleryImage
               src={galleryImages[2]}
               alt="Gallery 3"
@@ -198,7 +199,6 @@ export function GallerySection() {
             />
           </div>
 
-          {/* Ảnh 4 - full width */}
           <GalleryImage
             src={galleryImages[3]}
             alt="Gallery 4"
@@ -217,21 +217,18 @@ export function GallerySection() {
             priority
             hero
           />
-
           <GalleryImage
             src={galleryImages[1]}
             alt="Gallery 2"
             className="aspect-[5/4] rounded-[2rem]"
             direction="right"
           />
-
           <GalleryImage
             src={galleryImages[2]}
             alt="Gallery 3"
             className="aspect-[5/4] rounded-[2rem]"
             direction="left"
           />
-
           <GalleryImage
             src={galleryImages[3]}
             alt="Gallery 4"

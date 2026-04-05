@@ -1,7 +1,6 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
-
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
@@ -11,18 +10,11 @@ const heroImages = [
   "/images/DSC05749.jpg",
   "/images/DSC05589.jpg",
 ];
-// const heroImages = [
-//   "/images/DSC05287.jpg",
-//   "/images/DSC05358.jpg",
-//   "/images/DSC05333.jpg",
-// ];
 
 export function HeroSection() {
   useEffect(() => {
-    // Khi vào trang / reload -> luôn về đầu trang
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
-    // Fix cho một số trường hợp iPhone Safari giữ vị trí scroll cũ
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
@@ -44,7 +36,7 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden px-6 py-16 pb-24 md:px-10 md:py-24 md:pb-28 lg:py-28 lg:pb-32">
-      {/* Background glow nhẹ */}
+      {/* Background glow */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[-8%] top-[4%] h-44 w-44 rounded-full bg-neutral-200/40 blur-3xl sm:h-64 sm:w-64" />
         <div className="absolute bottom-[8%] right-[-8%] h-52 w-52 rounded-full bg-stone-200/40 blur-3xl sm:h-72 sm:w-72" />
@@ -104,7 +96,7 @@ export function HeroSection() {
               <p className="text-2xl font-medium md:text-3xl">26.04.2026</p>
             </motion.div>
 
-            {/* Buttons - luôn ngang trên mobile */}
+            {/* Buttons */}
             <motion.div
               className="flex flex-nowrap gap-2 sm:gap-3"
               initial={{ opacity: 0, y: 18 }}
@@ -150,67 +142,63 @@ type HeroEditorialImageStackProps = {
 function HeroEditorialImageStack({ images }: HeroEditorialImageStackProps) {
   return (
     <div className="relative mx-auto w-full max-w-[620px]">
-      {/* Chiều cao responsive cho collage */}
       <div className="relative h-[400px] sm:h-[500px] md:h-[560px] lg:h-[620px]">
-        {/* Ảnh chính */}
+        {/* Image 1 */}
         <motion.div
-          className="absolute left-0 top-8 z-20 w-[70%] overflow-hidden rounded-[2rem] bg-white p-2 shadow-2xl sm:top-10 sm:w-[68%]"
+          className="absolute left-0 top-8 z-20 w-[70%] overflow-hidden rounded-[2rem] border-4 border-white shadow-2xl sm:top-10 sm:w-[68%]"
           initial={{ opacity: 0, x: -20, y: 18, rotate: -2 }}
           animate={{ opacity: 1, x: 0, y: 0, rotate: -2 }}
           transition={{ duration: 0.9, delay: 0.28, ease: "easeOut" }}
-          whileHover={{ y: -4 }}
+          whileHover={{ y: -4, scale: 1.02 }}
         >
           <div className="aspect-[4/5] overflow-hidden rounded-[1.6rem]">
-            <motion.img
+            <Image
               src={images[0]}
               alt="Wedding photo 1"
-              className="h-full w-full object-cover"
-              initial={{ scale: 1.06 }}
-              animate={{ scale: 1 }}
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 1.5, delay: 0.34, ease: "easeOut" }}
+              fill
+              style={{ objectFit: "cover" }}
+              quality={70}
+              priority
             />
           </div>
         </motion.div>
 
-        {/* Ảnh phụ trên phải */}
+        {/* Image 2 */}
         <motion.div
-          className="absolute right-0 top-0 z-10 w-[42%] overflow-hidden rounded-[1.7rem] bg-white p-2 shadow-xl sm:w-[40%]"
+          className="absolute right-0 top-0 z-10 w-[42%] overflow-hidden rounded-[1.7rem] border-4 border-white shadow-xl sm:w-[40%]"
           initial={{ opacity: 0, x: 20, y: -12, rotate: 3 }}
           animate={{ opacity: 1, x: 0, y: 0, rotate: 3 }}
           transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
-          whileHover={{ y: -3 }}
+          whileHover={{ y: -3, scale: 1.02 }}
         >
           <div className="aspect-[3/4] overflow-hidden rounded-[1.25rem]">
-            <motion.img
+            <Image
               src={images[1]}
               alt="Wedding photo 2"
-              className="h-full w-full object-cover"
-              initial={{ scale: 1.06 }}
-              animate={{ scale: 1 }}
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 1.4, delay: 0.46, ease: "easeOut" }}
+              fill
+              style={{ objectFit: "cover" }}
+              quality={70}
+              priority
             />
           </div>
         </motion.div>
 
-        {/* Ảnh phụ dưới phải */}
+        {/* Image 3 */}
         <motion.div
-          className="absolute bottom-0 right-4 z-30 w-[48%] overflow-hidden rounded-[1.7rem] bg-white p-2 shadow-2xl sm:bottom-4 sm:right-6 sm:w-[46%]"
+          className="absolute bottom-0 right-4 z-30 w-[48%] overflow-hidden rounded-[1.7rem] border-4 border-white shadow-2xl sm:bottom-4 sm:right-6 sm:w-[46%]"
           initial={{ opacity: 0, x: 18, y: 18, rotate: -3 }}
           animate={{ opacity: 1, x: 0, y: 0, rotate: -3 }}
           transition={{ duration: 0.95, delay: 0.52, ease: "easeOut" }}
-          whileHover={{ y: -4 }}
+          whileHover={{ y: -4, scale: 1.02 }}
         >
           <div className="aspect-[4/5] overflow-hidden rounded-[1.25rem]">
-            <motion.img
+            <Image
               src={images[2]}
               alt="Wedding photo 3"
-              className="h-full w-full object-cover"
-              initial={{ scale: 1.06 }}
-              animate={{ scale: 1 }}
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 1.4, delay: 0.58, ease: "easeOut" }}
+              fill
+              style={{ objectFit: "cover" }}
+              quality={70}
+              priority
             />
           </div>
         </motion.div>
