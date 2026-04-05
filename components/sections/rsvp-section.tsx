@@ -690,7 +690,7 @@ export function RsvpSection() {
                       Wishes
                     </p>
                     <h3 className="mt-1 break-words text-2xl font-semibold tracking-[-0.02em] md:text-3xl">
-                      Các lời chúc ngọt ngào
+                      Những lời chúc tốt đẹp
                     </h3>
                   </div>
 
