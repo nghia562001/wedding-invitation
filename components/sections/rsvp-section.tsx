@@ -181,8 +181,8 @@ function WishCard({ wish }: { wish: Wish }) {
             <p className="text-xs text-neutral-400">{wish.createdAt}</p>
           </div>
         </div>
-
-        <span className="shrink-0 rounded-full border border-neutral-200 bg-white px-3 py-1 text-[11px] text-neutral-500">
+        
+        <span className="hidden shrink-0 rounded-full border border-neutral-200 bg-white px-3 py-1 text-[11px] text-neutral-500 sm:inline-flex">
           Best wishes
         </span>
       </div>

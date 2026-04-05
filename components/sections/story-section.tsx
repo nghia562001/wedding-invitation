@@ -12,13 +12,13 @@ const storyItems = [
   },
   {
     year: "2023",
-    title: "Những chuyến đi đầu tiên",
+    title: "Hành trình đầu tiên",
     desc: "Từ những buổi cà phê đến những chuyến đi xa, chúng tôi hiểu rằng mình muốn đi cùng nhau lâu hơn nữa.",
   },
   {
     year: "2026",
     title: "Lời hứa trọn đời",
-    desc: "Và giờ đây, chúng tôi muốn cùng nhau bước sang một chương mới – có gia đình, có yêu thương, có bạn bè chứng kiến.",
+    desc: "Giờ đây chúng tôi viết tiếp câu chuyện của riêng mình với gia đình, tình yêu và bạn bè đồng hành chứng kiến.",
   },
 ];
 

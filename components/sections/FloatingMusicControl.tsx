@@ -138,7 +138,7 @@ export function FloatingMusicControl({
           </motion.div>
 
           <span className="text-xs font-medium text-neutral-800">
-            {isPlaying ? "Đang phát" : "Nhạc cưới"}
+            {isPlaying ? "Đang phát" : "WEDDING SONG"}
           </span>
         </div>
       </motion.button>
