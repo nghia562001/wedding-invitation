@@ -156,7 +156,8 @@ function HeroEditorialImageStack({ images }: HeroEditorialImageStackProps) {
               src={images[0]}
               alt="Wedding photo 1"
               fill
-              style={{ objectFit: "cover" }}
+
+              style={{ objectFit: "cover", objectPosition: "top" } }
               quality={70}
               priority
             />
@@ -176,7 +177,7 @@ function HeroEditorialImageStack({ images }: HeroEditorialImageStackProps) {
               src={images[1]}
               alt="Wedding photo 2"
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover", objectPosition: "top" } }
               quality={70}
               priority
             />
@@ -196,7 +197,7 @@ function HeroEditorialImageStack({ images }: HeroEditorialImageStackProps) {
               src={images[2]}
               alt="Wedding photo 3"
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover", objectPosition: "top" } }
               quality={70}
               priority
             />
