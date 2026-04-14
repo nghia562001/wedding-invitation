@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://wedding-nghiavy.vercel.app/images/DSC05980.JPG", // 🔥 sửa lại domain của bạn
+        url: "https://wedding-nghiavy.vercel.app/images/DSC05980.jpg", // 🔥 sửa lại domain của bạn
         width: 1200,
         height: 630,
         alt: "Thiệp cưới Tường Vy & Trung Nghĩa",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Thiệp cưới Tường Vy & Trung Nghĩa",
     description: "Trân trọng kính mời bạn đến dự lễ cưới của chúng tôi.",
-    images: ["https://wedding-nghiavy.vercel.app/images/DSC05980.JPG"], // giống phía trên
+    images: ["https://wedding-nghiavy.vercel.app/images/DSC05980.jpg"], // giống phía trên
   },
 };
 
