@@ -115,7 +115,7 @@ export function HeroSection() {
                 onClick={() => scrollToSection("rsvp")}
                 className="h-11 flex-1 whitespace-nowrap px-3 text-[11px] sm:px-4 sm:text-sm"
               >
-                Xác nhận tham dự
+                Gửi lời yêu thương
               </Button>
             </motion.div>
           </motion.div>
