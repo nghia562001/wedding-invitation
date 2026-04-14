@@ -24,35 +24,34 @@ function getVisibleState() {
   return { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" };
 }
 
-type RevealBlockProps = {
-  children: React.ReactNode;
-  direction?: RevealDirection;
-  delay?: number;
-  className?: string;
-};
-
 function RevealBlock({
   children,
   direction = "up",
   delay = 0,
   className = "",
-}: RevealBlockProps) {
+}: {
+  children: React.ReactNode;
+  direction?: RevealDirection;
+  delay?: number;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement | null>(null);
   const controls = useAnimation();
-
   const inView = useInView(ref, { amount: 0.22 });
 
   useEffect(() => {
     if (inView) {
       controls.start({
         ...getVisibleState(),
-        transition: { type: "spring", stiffness: 62, damping: 22, mass: 1, delay },
+        transition: {
+          type: "spring",
+          stiffness: 62,
+          damping: 22,
+          delay,
+        },
       });
     } else {
-      controls.start({
-        ...getHiddenState(direction),
-        transition: { type: "spring", stiffness: 70, damping: 24, mass: 0.95 },
-      });
+      controls.start(getHiddenState(direction));
     }
   }, [inView, controls, direction, delay]);
 
@@ -68,34 +67,46 @@ export function EventSection() {
     <section id="event" className="px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-6xl space-y-10 md:space-y-14">
         {/* Heading */}
-        <RevealBlock direction="up" delay={0}>
+        <RevealBlock>
           <div className="space-y-3">
-            <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">Event Details</p>
-            <h2 className="text-3xl font-semibold tracking-[-0.02em] md:text-5xl">Thông tin buổi lễ</h2>
+            <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+              Event Details
+            </p>
+            <h2 className="text-3xl font-semibold md:text-5xl">
+              Thông tin buổi lễ
+            </h2>
             <p className="max-w-2xl text-neutral-600 md:text-lg">
               Chúng tôi rất hạnh phúc nếu có thể đón tiếp bạn trong ngày trọng đại này.
             </p>
           </div>
         </RevealBlock>
 
-        {/* Equal height layout */}
-        <div className="grid items-stretch gap-6 md:grid-cols-2">
-          {/* Left card */}
-          <RevealBlock direction="left" delay={0.04} className="h-full">
-            <Card className="h-full rounded-[2rem] border border-neutral-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
-              <CardContent className="flex h-full flex-col justify-between space-y-5 p-8 md:p-10">
+        {/* Layout */}
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Lễ Vu Quy */}
+          <RevealBlock direction="left">
+            <Card className="h-full rounded-[2rem] border bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+              <CardContent className="p-8 space-y-5">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">Lễ Vu Quy</p>
-                  <h3 className="mt-2 text-2xl font-semibold md:text-3xl">16:30 PM</h3>
-                  <p className="mt-2 text-neutral-600">Thứ Bảy, 25 tháng 04 năm 2026</p>
+                  <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">
+                    Lễ Vu Quy
+                  </p>
+                  <h3 className="mt-2 text-2xl font-semibold">16:30 PM</h3>
+                  <p className="text-neutral-600">
+                    Thứ Bảy, 25 tháng 04 năm 2026
+                  </p>
                 </div>
 
                 <Separator />
 
                 <div>
-                  <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">Địa điểm</p>
-                  <h4 className="mt-2 text-lg font-medium md:text-xl">Tư Gia Nhà Gái</h4>
-                  <p className="mt-2 text-sm leading-7 text-neutral-600 md:text-base">
+                  <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">
+                    Địa điểm
+                  </p>
+                  <h4 className="mt-2 text-lg font-medium">
+                    Tư Gia Nhà Gái
+                  </h4>
+                  <p className="text-neutral-600">
                     Ấp Bờ Cảng, xã Long Điền, tỉnh Cà Mau
                   </p>
                 </div>
@@ -103,17 +114,50 @@ export function EventSection() {
             </Card>
           </RevealBlock>
 
-          {/* Right image */}
-          <RevealBlock direction="right" delay={0.08} className="h-full">
-            <motion.div
-              className="relative overflow-hidden rounded-[2rem] h-[360px] sm:h-[420px] md:h-full"
-              whileHover={{ y: -4, transition: { type: "spring", stiffness: 140, damping: 18 } }}
-            >
+          {/* Lễ Tân Hôn */}
+          <RevealBlock direction="right">
+            <Card className="h-full rounded-[2rem] border bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+              <CardContent className="p-8 space-y-5">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">
+                    Lễ Tân Hôn
+                  </p>
+                  <h3 className="mt-2 text-2xl font-semibold">16:30 PM</h3>
+                  <p className="text-neutral-600">
+                    Chủ Nhật, 26 tháng 04 năm 2026
+                  </p>
+                </div>
+
+                <Separator />
+
+                <div>
+                  <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">
+                    Địa điểm
+                  </p>
+                  <h4 className="mt-2 text-lg font-medium">
+                    Tư Gia Nhà Trai
+                  </h4>
+                  <p className="text-neutral-600">
+                    Khóm 5A, phường Giá Rai, tỉnh Cà Mau
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </RevealBlock>
+
+          {/* IMAGE */}
+          <RevealBlock direction="up" className="md:col-span-2">
+            <motion.div className="relative h-[360px] sm:h-[420px] overflow-hidden rounded-[2rem]">
               <Image
                 src="/images/DSC05994.jpg"
-                alt="Wedding venue"
+                alt="Wedding"
                 fill
-                style={{ objectFit: "cover", borderRadius: "1.6rem" }}
+                className="
+                  object-cover
+                  object-center
+                  md:object-[center_20%]
+                  rounded-[1.6rem]
+                "
                 quality={80}
                 priority
               />
