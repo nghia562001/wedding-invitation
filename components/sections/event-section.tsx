@@ -107,7 +107,7 @@ export function EventSection() {
                     Tư Gia Nhà Gái
                   </h4>
                   <p className="text-neutral-600">
-                    Ấp Bờ Cảng, xã Long Điền, tỉnh Cà Mau
+                    Ấp Bờ Cảng, xã Long Điền, Cà Mau
                   </p>
                 </div>
               </CardContent>
@@ -138,7 +138,7 @@ export function EventSection() {
                     Tư Gia Nhà Trai
                   </h4>
                   <p className="text-neutral-600">
-                    Khóm 5A, phường Giá Rai, tỉnh Cà Mau
+                    Khóm 5A, phường Giá Rai, Cà Mau
                   </p>
                 </div>
               </CardContent>
