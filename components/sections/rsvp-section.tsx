@@ -492,7 +492,7 @@ export function RsvpSection() {
               </p>
 
               <h2 className="text-3xl font-semibold tracking-[-0.02em] md:text-5xl">
-                Xác nhận tham dự
+                Nhắn gửi yêu thương
               </h2>
 
               <p className="max-w-xl text-neutral-600 md:text-lg">
